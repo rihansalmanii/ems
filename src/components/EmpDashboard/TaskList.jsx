@@ -1,7 +1,7 @@
 import React from "react";
 import TaskCards from "./TaskCards";
 
-const TaskList = () => {
+const TaskList = ({data}) => {
   return (
     <div className="h-120 w-[95%] mx-auto bg-[#e5e5e5] rounded-3xl mt-10 py-5 px-5">
       <div id="noScroll" className=" flex flex-nowrap overflow-x-scroll gap-5">
