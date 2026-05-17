@@ -11,7 +11,6 @@ const AdminDashboard = ({setUser, data}) => {
     localStorage.setItem('loggedInUser', JSON.stringify({role: ""}))
   }
 
-  console.log(data)
 
   return (
     <div className='h-screen w-full '>

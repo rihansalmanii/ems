@@ -1,8 +1,8 @@
 const employeeData = [
   {
     id: 1,
-    firstName: "Arjun",
-    email: "employee1@example.com",
+    firstName: "Rihan",
+    email: "rihan@e.com",
     password: "123",
     taskCounts: {
       active: 1,

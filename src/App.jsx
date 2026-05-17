@@ -13,7 +13,7 @@ const App = () => {
 
   const authData = useContext(AuthContext);
 
-  // Check for logged in user on mount and when authData loads
+  // checking for logged in user and authData loads or not
   useEffect(() => {
     if (authData && authData.employees && authData.admin) {
       const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
@@ -24,7 +24,7 @@ const App = () => {
   }, [authData]);
 
   const handleLogin = (email, password) => {
-    // Ensure authData is loaded before checking
+    // ensuring authData is loaded before use
     if (!authData?.admin || !authData?.employees) {
       console.error("Auth data not loaded yet");
       return;

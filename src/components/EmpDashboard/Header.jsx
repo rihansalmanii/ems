@@ -10,7 +10,7 @@ const Header = ({setUser, data}) => {
     setUser('')
     // localStorage.setItem('loggedInUser', JSON.stringify({role: ""}))
   }
-   console.log(data?.firstName)
+
 
   
 

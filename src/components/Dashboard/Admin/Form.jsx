@@ -10,7 +10,6 @@ const Form = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(title + "\n" + description)
 
     setTitile('')
     setDescription('')
