@@ -8,7 +8,7 @@ const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     const { employees, admin } = getLocalStorage();
-    // Provide empty arrays if data is null (in case localStorage was cleared)
+    //  empty arrays if data is null (in case localStorage was cleared)
     setUserData({ 
       employees: employees || [], 
       admin: admin || [] 
