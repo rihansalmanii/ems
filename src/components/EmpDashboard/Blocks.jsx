@@ -17,19 +17,19 @@ const Blocks = ({ data }) => {
 
   return (
     <div className='rounded-3xl flex py-5 px-6 gap-5  bg-[#e5e5e5] w-[95%] mx-auto'>
-      <div className='h-50 w-95 bg-black rounded-3xl text-white px-5 py-5 flex flex-col justify-between gap-5'>
+      <div className='h-50 w-95 bg-yellow-700 rounded-3xl text-white px-5 py-5 flex flex-col justify-between gap-5'>
         <h1 className='text-8xl font-bold'>{newTask}</h1>
         <h1 className='text-2xl font-semibold '>New Tasks</h1>
       </div>
-      <div className='h-50 w-95 bg-black rounded-3xl text-white px-5 py-5 flex flex-col justify-between gap-5'>
+      <div className='h-50 w-95 bg-green-500 rounded-3xl text-white px-5 py-5 flex flex-col justify-between gap-5'>
         <h1 className='text-8xl font-bold'>{completed}</h1>
         <h1 className='text-2xl font-semibold '>Completed Tasks</h1>
       </div>
-      <div className='h-50 w-95 bg-black rounded-3xl text-white px-5 py-5 flex flex-col justify-between gap-5'>
+      <div className='h-50 w-95 bg-blue-500 rounded-3xl text-white px-5 py-5 flex flex-col justify-between gap-5'>
         <h1 className='text-8xl font-bold'>{accepted}</h1>
         <h1 className='text-2xl font-semibold '>Accepted Tasks</h1>
       </div>
-      <div className='h-50 w-95 bg-black rounded-3xl text-white px-5 py-5 flex flex-col justify-between gap-5'>
+      <div className='h-50 w-95 bg-red-600 rounded-3xl text-white px-5 py-5 flex flex-col justify-between gap-5'>
         <h1 className='text-8xl font-bold'>{failed}</h1>
         <h1 className='text-2xl font-semibold '>Failed Tasks</h1>
       </div>

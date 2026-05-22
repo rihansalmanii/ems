@@ -2,7 +2,7 @@ import React from 'react'
 
 const NewTask = ({taskInfo}) => {
   return (
-    <div className="h-110 w-100 bg-yellow-500 rounded-3xl text-white px-5 py-5 shrink-0">
+    <div className="h-110 w-100 bg-yellow-700 rounded-3xl text-white px-5 py-5 shrink-0">
       <div className="flex items-center justify-between">
         <p className="bg-red-600 px-3 py-1 rounded-lg">{taskInfo.category}</p>
         <p>{taskInfo.taskDate}</p>
