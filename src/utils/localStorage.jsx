@@ -144,12 +144,14 @@ const employeeData = [
 const adminData = [
   {
     id: 6,
+    firstName: "Admin1",
     email: "admin1@example.com",
     password: "admin123",
     role: "admin",
   },
   {
     id: 7,
+    firstName: "Admin2",
     email: "admin2@example.com",
     password: "admin123",
     role: "admin",

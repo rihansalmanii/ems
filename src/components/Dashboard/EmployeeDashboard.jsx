@@ -3,12 +3,12 @@ import Header from '../EmpDashboard/Header'
 import Blocks from '../EmpDashboard/Blocks'
 import TaskList from '../EmpDashboard/TaskList'
 
-const EmployeeDashboard = ({setUser, data}) => {
+const EmployeeDashboard = ({data, onLogout}) => {
+  console.log(data)
 
- 
   return (
     <div>
-      <Header setUser={setUser} data={data}/>
+      <Header onLogout={onLogout} data={data}/>
       <Blocks data={data}/>
       <TaskList data={data}/>
     </div>

@@ -2,13 +2,12 @@ import React, { useContext } from 'react'
 import { AuthContext } from '../../contexts/AuthProvider'
 
 
-const Header = ({setUser, data}) => {
+const Header = ({onLogout, data}) => {
 
 
 
-  const handleLogout = () => {
-    setUser('')
-    // localStorage.setItem('loggedInUser', JSON.stringify({role: ""}))
+  const handleLogout = ({handleLogout}) => {
+    onLogout();
   }
 
 

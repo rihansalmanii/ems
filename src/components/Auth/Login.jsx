@@ -26,7 +26,7 @@ const Login = ({handleLogin}) => {
         </h1>
       </div>
       {/* heading */}
-      <div className="absolute z-50 h-[65%] w-[30%] bg-white/60 backdrop-blur-lg top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-2xl border border-white shadow-2xl">
+      <div className="absolute z-50 h-[65%] w-[30%] bg-white/60 backdrop-blur-lg top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-2xl border border-white shadow-2xl min-w-md">
         <div className="flex items-center justify-between px-4 py-3 border-b border-[#c4c4c4]">
             <h1 className="font-roboto text-lg font-semibold tracking-wide text-gray-800">Log in</h1>
             <RxCross2 />
