@@ -56,7 +56,6 @@ const App = () => {
     }
 
   };
-  // localStorage.removeItem('loggedInUser')
 
   const handleLogout = () => {
     setUser(null);
@@ -69,7 +68,7 @@ const App = () => {
   return (
     <>
       {!user ? <Login handleLogin={handleLogin} /> : ""}
-      {user === "admin" && <AdminDashboard onLogout={handleLogout} data={authData} />}
+      {user === "admin" && <AdminDashboard onLogout={handleLogout} data={loggedUserData} />}
       {user === "employee" && <EmployeeDashboard onLogout={handleLogout} data={loggedUserData} />}
     </>
   );
