@@ -8,17 +8,15 @@ const Blocks = ({ data }) => {
   let failed = 0;
 
   if (data) {
-    console.log(data)
     newTask = data.taskCounts.newTask;
     accepted = data.taskCounts.active;
     completed = data.taskCounts.completed;
     failed = data.taskCounts.failed;
   }
 
-  console.log(newTask, accepted, failed, completed)
 
   return (
-    <div className=' rounded-3xl flex justify-around py-5 px-2  bg-[#e5e5e5] w-[95%] mx-auto'>
+    <div className='rounded-3xl flex py-5 px-6 gap-5  bg-[#e5e5e5] w-[95%] mx-auto'>
       <div className='h-50 w-95 bg-black rounded-3xl text-white px-5 py-5 flex flex-col justify-between gap-5'>
         <h1 className='text-8xl font-bold'>{newTask}</h1>
         <h1 className='text-2xl font-semibold '>New Tasks</h1>

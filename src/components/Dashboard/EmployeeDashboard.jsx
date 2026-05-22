@@ -4,7 +4,6 @@ import Blocks from '../EmpDashboard/Blocks'
 import TaskList from '../EmpDashboard/TaskList'
 
 const EmployeeDashboard = ({data, onLogout}) => {
-  console.log(data)
 
   return (
     <div>

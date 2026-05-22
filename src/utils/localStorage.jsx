@@ -12,24 +12,25 @@ const employeeData = [
     },
     tasks: [
       {
-        active: true,
-        newTask: true,
-        completed: false,
-        failed: false,
+        status: "active",
         taskTitle: "Design Landing Page",
         taskDescription: "Create a modern landing page UI",
         taskDate: "2026-05-10",
         category: "Design",
       },
       {
-        active: false,
-        newTask: false,
-        completed: true,
-        failed: false,
+        status: "completed",
         taskTitle: "Fix Navbar Bug",
         taskDescription: "Resolve responsive navbar issue",
         taskDate: "2026-05-08",
         category: "Development",
+      },
+      {
+        status: "new",
+        taskTitle: "Create Logo",
+        taskDescription: "Design a new logo",
+        taskDate: "2026-05-12",
+        category: "Design",
       },
     ],
   },
@@ -46,20 +47,14 @@ const employeeData = [
     },
     tasks: [
       {
-        active: true,
-        newTask: true,
-        completed: false,
-        failed: false,
+        status: "active",
         taskTitle: "API Integration",
         taskDescription: "Integrate backend APIs",
         taskDate: "2026-05-11",
         category: "Development",
       },
       {
-        active: false,
-        newTask: false,
-        completed: false,
-        failed: true,
+        status: "failed",
         taskTitle: "Database Setup",
         taskDescription: "Setup MongoDB schema",
         taskDate: "2026-05-07",
@@ -80,10 +75,7 @@ const employeeData = [
     },
     tasks: [
       {
-        active: true,
-        newTask: true,
-        completed: false,
-        failed: false,
+        status: "active",
         taskTitle: "Write Test Cases",
         taskDescription: "Create unit test cases",
         taskDate: "2026-05-12",
@@ -104,10 +96,7 @@ const employeeData = [
     },
     tasks: [
       {
-        active: false,
-        newTask: false,
-        completed: true,
-        failed: false,
+        status: "completed",
         taskTitle: "Optimize Images",
         taskDescription: "Reduce image sizes",
         taskDate: "2026-05-06",
@@ -128,10 +117,7 @@ const employeeData = [
     },
     tasks: [
       {
-        active: true,
-        newTask: true,
-        completed: false,
-        failed: false,
+        status: "active",
         taskTitle: "UI Redesign",
         taskDescription: "Redesign dashboard UI",
         taskDate: "2026-05-14",
