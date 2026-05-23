@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import { IoSearch } from "react-icons/io5";
+import { AuthContext } from "../../../contexts/AuthProvider";
+
 
 const AdminDashboardRight = () => {
+
+  const authData = useContext(AuthContext);
+  const { employees } = authData;
+
   return (
-    <div className="rounded-3xl h-[69vh] w-[50%] bg-[#e2e2e2] p-5 flex flex-col">
+    <div className="rounded-3xl h-[79vh] w-[70%] bg-[#e2e2e2] p-5 flex flex-col">
       <div className="flex gap-3">
         <div className="flex w-[80%] items-center bg-white rounded-3xl   py-2 gap-3 px-3">
           <span className="text-xl">
@@ -16,61 +22,27 @@ const AdminDashboardRight = () => {
         </button>
       </div>
       <div id="noScroll" className="h-full w-full bg-[#ffffff] rounded-3xl mt-4 p-4 overflow-auto flex flex-col gap-2">
-        <div className="w-full h-fit flex justify-between px-5 bg-black text-white py-5 rounded-xl">
-          <p>Rihan</p>
-          <p>Make ui design</p>
-          <p>Status</p>
+        <div className="w-full h-fit flex justify-between px-7 bg-black text-white py-5 rounded-xl sticky">
+          <p>Employee Name</p>
+          <p>New Task</p>
+          <p>Active Task</p>
+          <p>Completed</p>
+          <p>Failed</p>
         </div>
-        <div className="w-full h-fit flex justify-between px-5 bg-black text-white py-5 rounded-xl">
-          <p>Rihan</p>
-          <p>Make ui design</p>
-          <p>Status</p>
+
+      <div id="noScroll" className="overflow-auto flex flex-col gap-3">
+         {employees.map((employee, idx) => {
+        return <div key={idx} className="w-full h-fit flex justify-between px-7 border-2 border-black py-5 rounded-xl text-lg font-medium">
+          <p>{employee.firstName}</p>
+          <p className="text-yellow-600">{employee.taskCounts.newTask}</p>
+          <p className="text-blue-500">{employee.taskCounts.active}</p>
+          <p className="text-green-700 font-semibold">{employee.taskCounts.completed}</p>
+          <p className="text-red-600">{employee.taskCounts.failed}</p>
         </div>
-        <div className="w-full h-fit flex justify-between px-5 bg-black text-white py-5 rounded-xl">
-          <p>Rihan</p>
-          <p>Make ui design</p>
-          <p>Status</p>
-        </div>
-        <div className="w-full h-fit flex justify-between px-5 bg-black text-white py-5 rounded-xl">
-          <p>Rihan</p>
-          <p>Make ui design</p>
-          <p>Status</p>
-        </div>
-        <div className="w-full h-fit flex justify-between px-5 bg-black text-white py-5 rounded-xl">
-          <p>Rihan</p>
-          <p>Make ui design</p>
-          <p>Status</p>
-        </div>
-        <div className="w-full h-fit flex justify-between px-5 bg-black text-white py-5 rounded-xl">
-          <p>Rihan</p>
-          <p>Make ui design</p>
-          <p>Status</p>
-        </div>
-        <div className="w-full h-fit flex justify-between px-5 bg-black text-white py-5 rounded-xl">
-          <p>Rihan</p>
-          <p>Make ui design</p>
-          <p>Status</p>
-        </div>
-        <div className="w-full h-fit flex justify-between px-5 bg-black text-white py-5 rounded-xl">
-          <p>Rihan</p>
-          <p>Make ui design</p>
-          <p>Status</p>
-        </div>
-        <div className="w-full h-fit flex justify-between px-5 bg-black text-white py-5 rounded-xl">
-          <p>Rihan</p>
-          <p>Make ui design</p>
-          <p>Status</p>
-        </div>
-        <div className="w-full h-fit flex justify-between px-5 bg-black text-white py-5 rounded-xl">
-          <p>Rihan</p>
-          <p>Make ui design</p>
-          <p>Status</p>
-        </div>
-        <div className="w-full h-fit flex justify-between px-5 bg-black text-white py-5 rounded-xl">
-          <p>Rihan</p>
-          <p>Make ui design</p>
-          <p>Status</p>
-        </div>
+       }) } 
+       
+       </div> 
+
       </div>
     </div>
   );

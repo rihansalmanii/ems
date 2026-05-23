@@ -1,5 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { FaArrowLeft } from "react-icons/fa6";
+import { AuthContext } from '../../../contexts/AuthProvider';
+
 
 const Form = () => {
 
@@ -7,15 +9,43 @@ const Form = () => {
   const [description, setDescription] = useState('')
   const [assignTo, setAssignTo] = useState('')
   const [category, setCategory] = useState('')
+  const [date, setDate] = useState('')
+
+  const { employees } = useContext(AuthContext);
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    const newTask = {
+      status: 'new',
+      taskTitle: title,
+      taskDescription: description,
+      taskDate: date,
+      category: category
+    }
+
+    const updateEmployees = employees.map((employee) => {
+      if(employee.firstName.toLowerCase() == assignTo.toLowerCase()) {
+        return {
+          ...employee,
+          tasks: [...employee.tasks, newTask],
+          taskCounts: {
+            ...employee.taskCounts,
+            newTask: employee.taskCounts.newTask + 1,
+          },
+        };
+      }
+      return employee;
+    })
+    localStorage.setItem('employee', JSON.stringify(updateEmployees))
+    
     setTitile('')
     setDescription('')
     setCategory('')
     setAssignTo('')
   }
+  
 
   return (
     <div className='w-fit'>
@@ -59,6 +89,10 @@ const Form = () => {
             id="task-date"
             type="date"
             className='bg-white rounded-lg px-3 py-1 w-full mb-4'
+            value={date}
+            onChange={(e) => {
+              setDate(e.target.value)
+            }}
           />
 
           {/* ASSIGN TO */}
