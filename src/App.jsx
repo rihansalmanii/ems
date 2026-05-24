@@ -25,7 +25,7 @@ const App = () => {
 
 
   const handleLogin = (email, password) => {
-    // ensuring authData is loaded before use
+  
     if(authData) {
       const { employees, admin } = authData;
       console.log(employees)
@@ -62,6 +62,7 @@ const App = () => {
     setLoggedUserData(null);
     localStorage.removeItem('loggedInUser');
   };
+
 
 
 

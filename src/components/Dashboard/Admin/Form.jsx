@@ -11,7 +11,7 @@ const Form = () => {
   const [category, setCategory] = useState('')
   const [date, setDate] = useState('')
 
-  const { employees } = useContext(AuthContext);
+  const { employees, setEmployees } = useContext(AuthContext);
 
 
   const handleSubmit = (e) => {
@@ -25,7 +25,11 @@ const Form = () => {
       category: category
     }
 
-    const updateEmployees = employees.map((employee) => {
+    const matchedEmployee = employees.find((employee) => employee.firstName.toLowerCase() === assignTo.toLowerCase());
+
+    if(matchedEmployee) {
+      console.log(matchedEmployee)
+      const updatedEmployees = employees.map((employee) => {
       if(employee.firstName.toLowerCase() == assignTo.toLowerCase()) {
         return {
           ...employee,
@@ -35,10 +39,14 @@ const Form = () => {
             newTask: employee.taskCounts.newTask + 1,
           },
         };
-      }
+      } 
       return employee;
     })
-    localStorage.setItem('employee', JSON.stringify(updateEmployees))
+    setEmployees(updatedEmployees)
+    } else {
+      alert(`employee ${assignTo} not found !`)
+    }
+    
     
     setTitile('')
     setDescription('')

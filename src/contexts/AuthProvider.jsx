@@ -4,19 +4,23 @@ import { getLocalStorage } from "../utils/localStorage";
 export const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
-  const [userData, setUserData] = useState(null);
+  const [employees, setEmployees] = useState([]);
+  const [admin, setAdmin] = useState([]);
 
   useEffect(() => {
     const { employees, admin } = getLocalStorage();
     //  empty arrays if data is null (in case localStorage was cleared)
-    setUserData({ 
-      employees: employees || [], 
-      admin: admin || [] 
-    });
+    setEmployees(employees || []);
+    setAdmin(admin || []);
   }, []);
 
+
+  useEffect(() => {
+    localStorage.setItem("employees", JSON.stringify(employees));
+  }, [employees]);
+
   return (
-    <AuthContext.Provider value={userData}>{children}</AuthContext.Provider>
+    <AuthContext.Provider value={{ employees, setEmployees, admin }}>{children}</AuthContext.Provider>
   );
 };
 
